@@ -66,6 +66,8 @@ nav ul li a:hover {
     height: auto;
 }
 
+
+
 .welcome-text {
     position: absolute;
     bottom: 20px; /* Positioned at the bottom */
@@ -87,6 +89,20 @@ nav ul li a:hover {
     width: 100%;
     height: 80vh; /* Set height to 80% of the viewport height */
     background: #000; /* Fallback background color */
+}
+
+
+.fade{
+    opacity: 0;
+    transform: translateY(50px); /* Optional: adds a slight move-up effect */
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+
+.fade.in-viewport {
+    opacity: 1;
+    transform: translateY(0);
+    animation: fadeIn 1s forwards; /* Optional: adds animation */
 }
 
 /* Background container styles */

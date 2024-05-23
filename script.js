@@ -36,3 +36,27 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 3000);
     });
 });
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    const elements = document.querySelectorAll('.fade');
+
+    const elementInViewport = (el) => {
+        const rect = el.getBoundingClientRect();
+        return rect.top < window.innerHeight && rect.bottom >= 0;
+    };
+
+    const checkElementsInViewport = () => {
+        elements.forEach((el) => {
+            if (elementInViewport(el)) {
+                el.classList.add('in-viewport');
+            }
+        });
+    };
+
+    document.addEventListener('scroll', checkElementsInViewport);
+    window.addEventListener('resize', checkElementsInViewport);
+
+    // Initial check
+    checkElementsInViewport();
+});
