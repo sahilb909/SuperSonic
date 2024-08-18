@@ -1,4 +1,8 @@
 <?php
+
+require '/var/www/html/Contact-PHP/Exception.PHP';
+require '/var/www/html/Contact-PHP/PHPMailer.PHP';
+require '/var/www/html/Contact-PHP/SMTP.PHP';
 //Import PHPMailer classes into the global namespace
 //These must be at the top of your script, not inside a function
 use PHPMailer\PHPMailer\PHPMailer;
@@ -6,9 +10,7 @@ use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
 
 //Load Composer's autoloader
-require 'Contact-PHP/Exception.PHP';
-require 'Contact-PHP/PHPMailer.PHP';
-require 'Contact-PHP/SMTP.PHP';
+
 
 //Create an instance; passing `true` enables exceptions
 $mail = new PHPMailer(true);
