@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: F1SuperSonic
+    env: docker
+    plan: starter
+    dockerfilePath: ./Dockerfile
+    buildCommand: ''
+    startCommand: ''
+    autoDeploy: true
