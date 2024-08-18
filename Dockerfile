@@ -7,8 +7,11 @@ WORKDIR /var/www/html
 # Copy the current directory contents into the container at /var/www/html
 COPY . /var/www/html
 
-# Install any necessary dependencies
-RUN docker-php-ext-install mysqli pdo pdo_mysql && docker-php-ext-enable pdo_mysql
+# Ensure that the Contact-PHP directory is copied correctly
+COPY Contact-PHP /var/www/html/Contact-PHP
+
+# Install any necessary dependencies (if required)
+# RUN docker-php-ext-install mysqli pdo pdo_mysql && docker-php-ext-enable pdo_mysql
 
 # Expose port 80 to the outside world
 EXPOSE 80
