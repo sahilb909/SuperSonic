@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: php-web-app
+    env: docker
+    plan: starter
+    dockerfilePath: ./Dockerfile
+    buildCommand: ''
+    startCommand: ''
+    autoDeploy: true
